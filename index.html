@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairis Spa | Belleza & Bienestar</title>
+    <meta name="description" content="Descubre el lujo y la relajación en Fairis Spa. Tratamientos faciales, masajes terapéuticos y rituales de bienestar.">
+    
+    <!-- Google Fonts: Playfair Display for headings (Luxury) and Montserrat for body (Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ══════════════════════════════
+           CSS VARIABLES & RESET
+        ══════════════════════════════ */
+        :root {
+            /* Palette: Soft beiges, creams, sage green & gold */
+            --bg-body:      #FAF7F2; /* Crema lux */
+            --bg-surface:   #FFFFFF;
+            --sage-green:   #7d8c72; /* Verde botánico relajante */
+            --sage-dark:    #5a6751;
+            --gold-accent:  #D4AF37; /* Acento dorado clásico */
+            --text-dark:    #2C2F2D;
+            --text-muted:   #6C706D;
+            --border-color: #EAE3D9;
+            
+            --font-headings: 'Playfair Display', serif;
+            --font-body:     'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ══════════════════════════════
+           PRELOADER
+        ══════════════════════════════ */
+        #preloader {
+            position: fixed; inset: 0;
+            background-color: var(--bg-body);
+            z-index: 9999;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader-ring {
+            width: 50px; height: 50px;
+            border: 2px solid rgba(125, 140, 114, 0.2); /* sage green alpha */
+            border-top-color: var(--sage-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        .pre-text {
+            font-family: var(--font-headings);
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--sage-green);
+            animation: pulseText 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes pulseText { from { opacity: 0.5; } to { opacity: 1; } }
+
+
+        /* ══════════════════════════════
+           NAVBAR
+        ══════════════════════════════ */
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 1.5rem 5%;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 1000;
+            transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+        }
+        header.scrolled {
+            background-color: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            font-family: var(--font-headings);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+        .logo span { color: var(--sage-green); }
+
+        .nav-links {
+            display: flex; gap: 2rem; list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none; color: var(--text-dark);
+            font-size: 0.85rem; font-weight: 500;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--sage-green); }
+        
+        .btn-reserve {
+            background-color: var(--sage-green);
+            color: #fff; text-decoration: none;
+            padding: 0.7rem 1.5rem; border-radius: 4px;
+            font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-reserve:hover {
+            background-color: var(--sage-dark);
+            transform: translateY(-2px);
+        }
+
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: var(--text-dark); margin: 5px 0; transition: 0.3s; }
+        
+
+        /* ══════════════════════════════
+           HERO SECTION
+        ══════════════════════════════ */
+        .hero {
+            position: relative;
+            height: 100vh; min-height: 600px;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; overflow: hidden;
+            padding: 0 5%;
+        }
+        /* TBD: Hero background image will be placed here */
+        .hero-bg {
+            position: absolute; inset: 0; z-index: -1;
+            background-color: var(--border-color); /* Placeholder color until img is loaded */
+            background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070');
+            background-size: cover; background-position: center;
+            opacity: 0; animation: fadeInBg 2s forwards 0.5s;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0; z-index: 0;
+            background: linear-gradient(to bottom, rgba(250, 247, 242, 0.4), rgba(250, 247, 242, 0.9));
+        }
+        @keyframes fadeInBg { to { opacity: 1; } }
+
+        .hero-content {
+            position: relative; z-index: 1; max-width: 800px;
+            transform: translateY(30px); opacity: 0;
+            animation: slideUp 1s cubic-bezier(0.2,0.8,0.2,1) forwards 1s;
+        }
+        .hero-subtitle {
+            font-size: 0.85rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--sage-dark);
+            margin-bottom: 1.5rem; display: block;
+        }
+        .hero-title {
+            font-family: var(--font-headings);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 500; color: var(--text-dark);
+            line-height: 1.1; margin-bottom: 1.5rem;
+        }
+        .hero-title em { font-style: italic; color: var(--sage-green); }
+        
+        .hero-desc {
+            font-size: 1rem; color: var(--text-muted);
+            margin-bottom: 2.5rem; max-width: 600px; margin-inline: auto;
+        }
+
+        @keyframes slideUp { to { transform: translateY(0); opacity: 1; } }
+
+        /* ══════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════ */
+        @media (max-width: 768px) {
+            .nav-links, .btn-reserve.desktop-only { display: none; }
+            .hamburger { display: block; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+        <div class="pre-text">Fairis Spa</div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo">Fairis<span>.</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <a href="#contacto" class="btn-reserve desktop-only">Reserva tu cita</a>
+        
+        <button class="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">Santuario de Bienestar</span>
+            <h1 class="hero-title">El equilibrio perfecto<br>para tu <em>cuerpo y alma</em></h1>
+            <p class="hero-desc">
+                Sumérgete en una experiencia de relajación total. Nuestros tratamientos holísticos restauran tu vitalidad en un ambiente de lujo y serenidad.
+            </p>
+            <a href="#servicios" class="btn-reserve">Explorar Rituales</a>
+        </div>
+    </section>
+
+    <!-- Script -->
+    <script>
+        // Hiding Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hide');
+            }, 800);
+        });
+
+        // Navbar Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
