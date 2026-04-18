@@ -1,264 +1,390 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fairis Spa | Belleza & Bienestar</title>
-    <meta name="description" content="Descubre el lujo y la relajación en Fairis Spa. Tratamientos faciales, masajes terapéuticos y rituales de bienestar.">
-    
-    <!-- Google Fonts: Playfair Display for headings (Luxury) and Montserrat for body (Clean) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ══════════════════════════════
-           CSS VARIABLES & RESET
-        ══════════════════════════════ */
-        :root {
-            /* Palette: Soft beiges, creams, sage green & gold */
-            --bg-body:      #FAF7F2; /* Crema lux */
-            --bg-surface:   #FFFFFF;
-            --sage-green:   #7d8c72; /* Verde botánico relajante */
-            --sage-dark:    #5a6751;
-            --gold-accent:  #D4AF37; /* Acento dorado clásico */
-            --text-dark:    #2C2F2D;
-            --text-muted:   #6C706D;
-            --border-color: #EAE3D9;
-            
-            --font-headings: 'Playfair Display', serif;
-            --font-body:     'Montserrat', sans-serif;
-        }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fairis Spa - Esencia y Bienestar en Arequipa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#5b4f47",
+                        "on-surface-variant": "#5f5f5d",
+                        "on-secondary-fixed-variant": "#655951",
+                        "surface": "#fcf9f7",
+                        "secondary-fixed": "#f1dfd4",
+                        "outline-variant": "#b3b2af",
+                        "on-background": "#323331",
+                        "error-container": "#fd795a",
+                        "inverse-primary": "#f7c5c5",
+                        "on-tertiary-fixed": "#4a3400",
+                        "secondary-dim": "#5d5148",
+                        "surface-container-highest": "#e4e2df",
+                        "inverse-surface": "#0e0e0d",
+                        "on-primary": "#fff7f6",
+                        "outline": "#7b7b78",
+                        "tertiary": "#785a1a",
+                        "on-error-container": "#6e1400",
+                        "surface-tint": "#7b5556",
+                        "secondary-container": "#f1dfd4",
+                        "error": "#a73b21",
+                        "on-tertiary-container": "#624604",
+                        "secondary": "#695d54",
+                        "primary-dim": "#6e494a",
+                        "tertiary-container": "#fbd185",
+                        "primary-fixed-dim": "#e9b8b8",
+                        "surface-container-low": "#f6f3f1",
+                        "secondary-fixed-dim": "#e2d1c6",
+                        "tertiary-dim": "#6b4e0e",
+                        "background": "#fcf9f7",
+                        "surface-variant": "#e4e2df",
+                        "primary-fixed": "#f7c5c5",
+                        "inverse-on-surface": "#9e9d9b",
+                        "error-dim": "#791903",
+                        "on-secondary": "#fff7f4",
+                        "on-tertiary-fixed-variant": "#6c500f",
+                        "on-surface": "#323331",
+                        "on-error": "#fff7f6",
+                        "surface-container": "#f0edeb",
+                        "tertiary-fixed": "#fbd185",
+                        "tertiary-fixed-dim": "#ecc479",
+                        "surface-dim": "#dbdad7",
+                        "primary": "#7b5556",
+                        "primary-container": "#f7c5c5",
+                        "on-primary-fixed-variant": "#6b4747",
+                        "on-primary-fixed": "#4b2b2c",
+                        "surface-bright": "#fcf9f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#483d35",
+                        "on-primary-container": "#613e3f",
+                        "surface-container-high": "#eae8e5",
+                        "on-tertiary": "#fff8f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
         }
-
-        html { 
-            scroll-behavior: smooth; 
-            font-size: 16px;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            background-color: var(--bg-body);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ══════════════════════════════
-           PRELOADER
-        ══════════════════════════════ */
-        #preloader {
-            position: fixed; inset: 0;
-            background-color: var(--bg-body);
-            z-index: 9999;
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-        #preloader.hide {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .loader-ring {
-            width: 50px; height: 50px;
-            border: 2px solid rgba(125, 140, 114, 0.2); /* sage green alpha */
-            border-top-color: var(--sage-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        .pre-text {
-            font-family: var(--font-headings);
-            font-size: 0.9rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--sage-green);
-            animation: pulseText 1.5s ease-in-out infinite alternate;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes pulseText { from { opacity: 0.5; } to { opacity: 1; } }
-
-
-        /* ══════════════════════════════
-           NAVBAR
-        ══════════════════════════════ */
-        header {
-            position: fixed; top: 0; left: 0; right: 0;
-            padding: 1.5rem 5%;
-            display: flex; align-items: center; justify-content: space-between;
-            z-index: 1000;
-            transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
-        }
-        header.scrolled {
-            background-color: rgba(250, 247, 242, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
-
-        .logo {
-            font-family: var(--font-headings);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-decoration: none;
-            letter-spacing: 0.05em;
-        }
-        .logo span { color: var(--sage-green); }
-
-        .nav-links {
-            display: flex; gap: 2rem; list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none; color: var(--text-dark);
-            font-size: 0.85rem; font-weight: 500;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--sage-green); }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Noto Serif', serif; }
         
-        .btn-reserve {
-            background-color: var(--sage-green);
-            color: #fff; text-decoration: none;
-            padding: 0.7rem 1.5rem; border-radius: 4px;
-            font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
-            transition: background-color 0.3s, transform 0.3s;
+        .glass-panel {
+            background: rgba(252, 249, 247, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
-        .btn-reserve:hover {
-            background-color: var(--sage-dark);
-            transform: translateY(-2px);
-        }
-
-        .hamburger { display: none; background: none; border: none; cursor: pointer; }
-        .hamburger span { display: block; width: 25px; height: 2px; background: var(--text-dark); margin: 5px 0; transition: 0.3s; }
         
-
-        /* ══════════════════════════════
-           HERO SECTION
-        ══════════════════════════════ */
-        .hero {
-            position: relative;
-            height: 100vh; min-height: 600px;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; overflow: hidden;
-            padding: 0 5%;
+        .ambient-shadow {
+            box-shadow: 0 10px 30px rgba(50, 51, 49, 0.05);
         }
-        /* TBD: Hero background image will be placed here */
-        .hero-bg {
-            position: absolute; inset: 0; z-index: -1;
-            background-color: var(--border-color); /* Placeholder color until img is loaded */
-            background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070');
-            background-size: cover; background-position: center;
-            opacity: 0; animation: fadeInBg 2s forwards 0.5s;
-        }
-        .hero-overlay {
-            position: absolute; inset: 0; z-index: 0;
-            background: linear-gradient(to bottom, rgba(250, 247, 242, 0.4), rgba(250, 247, 242, 0.9));
-        }
-        @keyframes fadeInBg { to { opacity: 1; } }
-
-        .hero-content {
-            position: relative; z-index: 1; max-width: 800px;
-            transform: translateY(30px); opacity: 0;
-            animation: slideUp 1s cubic-bezier(0.2,0.8,0.2,1) forwards 1s;
-        }
-        .hero-subtitle {
-            font-size: 0.85rem; letter-spacing: 0.3em;
-            text-transform: uppercase; color: var(--sage-dark);
-            margin-bottom: 1.5rem; display: block;
-        }
-        .hero-title {
-            font-family: var(--font-headings);
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 500; color: var(--text-dark);
-            line-height: 1.1; margin-bottom: 1.5rem;
-        }
-        .hero-title em { font-style: italic; color: var(--sage-green); }
         
-        .hero-desc {
-            font-size: 1rem; color: var(--text-muted);
-            margin-bottom: 2.5rem; max-width: 600px; margin-inline: auto;
+        .ghost-border {
+            border: 1px solid rgba(179, 178, 175, 0.15);
         }
-
-        @keyframes slideUp { to { transform: translateY(0); opacity: 1; } }
-
-        /* ══════════════════════════════
-           RESPONSIVE
-        ══════════════════════════════ */
-        @media (max-width: 768px) {
-            .nav-links, .btn-reserve.desktop-only { display: none; }
-            .hamburger { display: block; }
+        
+        .glow-texture {
+            background: linear-gradient(135deg, rgba(247, 197, 197, 0.4) 0%, rgba(252, 249, 247, 1) 100%);
         }
-
     </style>
 </head>
-<body>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-ring"></div>
-        <div class="pre-text">Fairis Spa</div>
-    </div>
-
-    <!-- Header -->
-    <header id="header">
-        <a href="#" class="logo">Fairis<span>.</span></a>
-        
-        <ul class="nav-links">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-
-        <a href="#contacto" class="btn-reserve desktop-only">Reserva tu cita</a>
-        
-        <button class="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="hero-subtitle">Santuario de Bienestar</span>
-            <h1 class="hero-title">El equilibrio perfecto<br>para tu <em>cuerpo y alma</em></h1>
-            <p class="hero-desc">
-                Sumérgete en una experiencia de relajación total. Nuestros tratamientos holísticos restauran tu vitalidad en un ambiente de lujo y serenidad.
-            </p>
-            <a href="#servicios" class="btn-reserve">Explorar Rituales</a>
-        </div>
-    </section>
-
-    <!-- Script -->
-    <script>
-        // Hiding Preloader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hide');
-            }, 800);
-        });
-
-        // Navbar Scroll Effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col antialiased relative">
+<div class="fixed inset-0 z-[-1] bg-[url('{{DATA:IMAGE:IMAGE_2}}')] bg-cover bg-center opacity-[0.08] mix-blend-multiply pointer-events-none"></div>
+<!-- Shared Component: TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif text-[#7b5556] tracking-tighter">
+                FAIRIS SPA
+            </div>
+<nav class="hidden md:flex space-x-8 items-center font-serif text-lg tracking-tight">
+<a class="text-[#7b5556] border-b border-[#7b5556] pb-1 font-semibold hover:text-[#7b5556] transition-all duration-300 ease-in-out scale-95 duration-200 active:opacity-80" href="#inicio">Inicio</a>
+<a class="text-stone-500 dark:text-stone-400 uppercase tracking-[0.05em] text-[10px] font-medium hover:text-[#7b5556] transition-all duration-300 ease-in-out scale-95 duration-200 active:opacity-80" href="#servicios">Servicios</a>
+<a class="text-stone-500 dark:text-stone-400 uppercase tracking-[0.05em] text-[10px] font-medium hover:text-[#7b5556] transition-all duration-300 ease-in-out scale-95 duration-200 active:opacity-80" href="#nosotros">Nosotros</a>
+<a class="text-stone-500 dark:text-stone-400 uppercase tracking-[0.05em] text-[10px] font-medium hover:text-[#7b5556] transition-all duration-300 ease-in-out scale-95 duration-200 active:opacity-80" href="#galeria">Galería</a>
+<a class="text-stone-500 dark:text-stone-400 uppercase tracking-[0.05em] text-[10px] font-medium hover:text-[#7b5556] transition-all duration-300 ease-in-out scale-95 duration-200 active:opacity-80" href="#contacto">Contacto</a>
+</nav>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary rounded-xl px-6 py-3 font-label font-medium tracking-wide hover:bg-primary-dim transition-colors duration-300 flex items-center gap-2">
+                    Reservar Cita
+                </button>
+</div>
+<!-- Mobile Menu Toggle (Decorative) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-24">
+<!-- 1. Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-4 md:px-12 max-w-7xl mx-auto overflow-hidden rounded-3xl mt-4" id="inicio">
+<div class="absolute inset-0 z-0">
+<img alt="Spa interior" class="w-full h-full object-cover opacity-90" data-alt="high-end luxury spa interior with soft warm lighting, minimalist decor, neutral tones, and elegant botanical accents, serene and calming atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1cQHxJdbbmbOkA7u8b-XSb50JK-LX_NCXRuuRbSaZiNx61M3xzyVEEgOO3pQmyF4NU-18xWxwH4zNjxP-gp4VURLa81fdFrzDDzPi53LAOnn1zdGv0ZhCHojD44rxr0NOd2Rka11ITGYdc3TewMrfsQjnEnlbpBXwIcAKF9PxKpALt2McV6lFyE1nBwFxzPV9I2j_6lIpp5TG74s_yMTiSioKR_S9ypfKxH6CFWTtufCT5a8lLNHlQS8SSpqtgImvM1I63_C_zdAE"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/90 via-surface/70 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-3xl pl-4 md:pl-12">
+<div class="bg-surface/40 backdrop-blur-md p-8 rounded-2xl ghost-border">
+<span class="font-label text-tertiary tracking-[0.1em] uppercase text-sm mb-4 block">Bienestar y Belleza</span>
+<h1 class="font-headline text-5xl md:text-7xl text-on-background leading-tight mb-6 tracking-tight">
+                        Realza tu <br/>
+<span class="text-primary italic">belleza natural</span>
+</h1>
+<p class="font-body text-on-surface-variant text-lg md:text-xl mb-10 max-w-xl leading-relaxed font-medium">
+                        Experiencia premium en cuidado personal y belleza en Arequipa. Un refugio diseñado para tu tranquilidad y renovación.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary rounded-xl px-8 py-4 font-label font-medium tracking-wide hover:bg-primary-dim transition-colors duration-300 text-center flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                            Reservar cita
+                        </button>
+<a class="bg-surface-container-lowest/80 backdrop-blur-sm text-primary rounded-xl px-8 py-4 font-label font-medium tracking-wide hover:bg-surface-container-lowest transition-colors duration-300 text-center flex items-center justify-center ghost-border" href="#servicios">
+                            Ver servicios
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Sobre Nosotros -->
+<section class="py-24 relative overflow-hidden" id="nosotros">
+<div class="absolute inset-0 bg-[url('{{DATA:IMAGE:IMAGE_2}}')] bg-cover bg-center opacity-[0.12] mix-blend-multiply pointer-events-none"></div>
+<div class="px-4 md:px-12 max-w-7xl mx-auto relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl shadow-stone-200/50">
+<img alt="Profesional de belleza" class="w-full h-full object-cover" data-alt="close up of a professional beauty treatment with elegant hands, soft focus background, warm lighting, luxury salon setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQCXI8E1votTTSKtTDdd20B8GsHc4eWz3oHWIlUQWGx2UjNStoSiUdA_j0hsNiNYNSyEdWWcgIPlT-HBrjKTAwq-wTGICYp4jOyj70yVSIRz3Ife_g8RKRLsTA5l2p1JJe-5sH7S3ANB8urIMwx8i6pbYZ9Yg0z8uQYFu8so2j4Iu7my_enfEt7j_bMC-dPtspZu9xRujp39H8kpof-1Tp13wuGYuG_ZFsO7KqvQ5Jw-A1ITrW8V1hpl-FVu5E74sZZUo1WkbcwpaW"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary-container rounded-full -z-10 blur-2xl opacity-60"></div>
+</div>
+<div class="pl-0 md:pl-8">
+<h2 class="font-headline text-4xl md:text-5xl text-on-background mb-8 tracking-tight">
+                        La esencia de <br/>
+<span class="text-secondary italic">tu confianza</span>
+</h2>
+<div class="font-body text-on-surface-variant space-y-6 text-lg leading-relaxed">
+<p>
+                            En Fairis Spa, creemos que la verdadera belleza reside en la confianza. Nuestro ambiente boutique está meticulosamente diseñado para ofrecerte un escape del ritmo diario, donde cada detalle está pensado para tu confort.
+                        </p>
+<p>
+                            Nos enorgullece utilizar exclusivamente productos de la más alta gama, incluyendo la prestigiosa línea profesional de <span class="text-on-background font-semibold">L'Oréal</span>, garantizando resultados excepcionales que respetan y nutren tu piel y cabello.
+                        </p>
+<p>
+                            Déjate envolver por una atmósfera de serenidad y profesionalismo absoluto.
+                        </p>
+</div>
+<div class="mt-12 flex gap-8">
+<div class="flex flex-col">
+<span class="font-headline text-3xl text-primary">10+</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1">Años de exp.</span>
+</div>
+<div class="w-px bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="font-headline text-3xl text-primary">5k+</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1">Clientes felices</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Servicios -->
+<section class="py-24 bg-surface-container-low/50 relative overflow-hidden" id="servicios">
+<div class="absolute inset-0 bg-[url('{{DATA:IMAGE:IMAGE_2}}')] bg-cover bg-center opacity-[0.08] mix-blend-multiply pointer-events-none"></div>
+<div class="px-4 md:px-12 max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-16 max-w-2xl mx-auto">
+<span class="font-label text-tertiary tracking-[0.1em] uppercase text-sm mb-4 block">Nuestro Catálogo</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-background mb-6 tracking-tight">Rituales de <span class="italic text-primary">Cuidado</span></h2>
+<p class="font-body text-on-surface-variant">Descubre nuestra selección de tratamientos diseñados para realzar tu belleza y brindarte momentos de profunda relajación.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Card 1 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 ambient-shadow ghost-border flex flex-col h-full">
+<div class="h-48 overflow-hidden">
+<img alt="Manicure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="elegant manicure and pedicure treatment, soft hands, neutral nail polish, luxurious spa setting, bright clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuxjRD7zm_levBLCA44SPpzaaQK0kYCHhegvfqGVa10gwzdiQ5g-b2QXR7YNp5IOPR0rDZqkgK4D4PRfEc4mPp59NVFU9G0-SR9H9RNIGs9OKBCkfK8PY6UjypUDtyyisQPh5s74IVMIIXWhLCPQJaeh5orjF006BFV0Ix0YmghiKIkDVlTF25Os9R_XN5GU4oe1YKhcAvuOd_3mgsgXJxgcLn7MvoUl0OoBNUWGcQbjht0kEFmBf9gT54TGqtxGy6Ialn9cuf5SVH"/>
+</div>
+<div class="p-6 flex flex-col flex-grow bg-surface-container-lowest/90">
+<h3 class="font-headline text-xl text-on-background mb-2">Manicure y Pedicure</h3>
+<p class="font-body text-sm text-on-surface-variant flex-grow mb-4">Cuidado completo para tus manos y pies, con acabados impecables y duraderos.</p>
+<button class="text-primary font-label text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all w-fit">
+                                Agendar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 ambient-shadow ghost-border flex flex-col h-full">
+<div class="h-48 overflow-hidden">
+<img alt="Faciales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="relaxing facial treatment with soft towels, gentle lighting, serene atmosphere, luxurious spa setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDayhQMyk9Bt3zGBGBPATRNOgMi4L9Nxuv0mNHZwn-s_FEXd5qd2Z4E2aPs9umnvZ55MtJR28juC2KHofW4dmTJCrqoj53H1L5-zirImcZbLWqKOuoHGrFla6scj2AvqjfJuFygQDisEe2HH_9eQCYygbqkEbLWsUINNUU8wiGn3vYZIw1YWiP_fbGXmii28YmgJTj-b7oRX4EHq5bquJY0MRXTBY0Ta2n6R9lrqVxQ019ps9hlmKxckhXNmOl3FtRVoPF7_CrVJGj0"/>
+</div>
+<div class="p-6 flex flex-col flex-grow bg-surface-container-lowest/90">
+<h3 class="font-headline text-xl text-on-background mb-2">Faciales</h3>
+<p class="font-body text-sm text-on-surface-variant flex-grow mb-4">Tratamientos rejuvenecedores y purificantes para una piel radiante y luminosa.</p>
+<button class="text-primary font-label text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all w-fit">
+                                Agendar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 ambient-shadow ghost-border flex flex-col h-full">
+<div class="h-48 overflow-hidden">
+<img alt="Masajes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="calming massage therapy scene, warm oils, soft towels, dim warm lighting, serene spa environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RMs5ML42oEFSFRQ4scvmQ6eDGKSMAal905lldrIQWIlfk6kSvcPFozuQljofOKp8A59R_9uAYlmTztQy_3CSIv4ovLmMTI6o9yYulryve44ImiuqgIz9D4MDwBL8omhHiMdRY8dEa0fZYK7Lvsi0onnIDpts_qks0rQu38491-76AvILt4QH1hPxCmluJVT49i7tMJ_VgfrC2BuALBn7tmhxPsItTiZNY9XAaFQHr6snzbifl9ZUFSD01fRsjYEVpbJVAWGlWU-i"/>
+</div>
+<div class="p-6 flex flex-col flex-grow bg-surface-container-lowest/90">
+<h3 class="font-headline text-xl text-on-background mb-2">Masajes</h3>
+<p class="font-body text-sm text-on-surface-variant flex-grow mb-4">Relajación profunda para liberar tensiones y restaurar el equilibrio de tu cuerpo.</p>
+<button class="text-primary font-label text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all w-fit">
+                                Agendar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 ambient-shadow ghost-border flex flex-col h-full">
+<div class="h-48 overflow-hidden">
+<img alt="Tratamientos Capilares" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="professional hair care treatment, luxurious salon setting, soft lighting, elegant atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9cptnKp-FTi7k6niZ1h82pE5Lajd9Ra3TE0Ixq5GpdNiTCTjQJSlzUFyUhD9e8PYsIAL34hWjRouwMwUyP0C3pooDHLguptP5HaUMsVC1wa7jsvuZXuvmir1ns6SjT1fOS86TFZrH_PA2-ifNPSAnTn5zNvxVqQvk5hyLtBCS0HlcZu6WSn9xiXdyLWB6uU-qDkMPoRlCyxYQXKZQfNTekoXQFjLlCiAw0457titWv_xRcy10UoM49N2avuqcAShddOMVSQmGLDlC"/>
+</div>
+<div class="p-6 flex flex-col flex-grow bg-surface-container-lowest/90">
+<h3 class="font-headline text-xl text-on-background mb-2">Tratamientos Capilares</h3>
+<p class="font-body text-sm text-on-surface-variant flex-grow mb-4">Nutrición y vitalidad para tu cabello con productos exclusivos de L'Oréal.</p>
+<button class="text-primary font-label text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all w-fit">
+                                Agendar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-surface-container-lowest/80 backdrop-blur-sm text-primary rounded-xl px-8 py-3 font-label font-medium tracking-wide hover:bg-surface-container-highest transition-colors duration-300 ghost-border inline-block shadow-sm">
+                        Ver todos los servicios
+                    </button>
+</div>
+</div>
+</section>
+<!-- 7. CTA Final -->
+<section class="py-32 px-4 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('{{DATA:IMAGE:IMAGE_2}}')] bg-cover bg-center opacity-30 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-surface/60 backdrop-blur-[2px]"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10 bg-surface/40 backdrop-blur-md p-12 rounded-3xl ghost-border ambient-shadow">
+<h2 class="font-headline text-5xl md:text-6xl text-on-background mb-8 tracking-tight">
+                    Reserva tu momento de <br/>
+<span class="italic text-primary">belleza hoy</span>
+</h2>
+<p class="font-body text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto font-medium">
+                    Nuestro equipo de especialistas está listo para brindarte una experiencia inolvidable. Separa tu espacio y permítenos consentirte.
+                </p>
+<button class="bg-[#25D366] text-white rounded-xl px-10 py-5 font-label font-medium tracking-wide hover:bg-[#20bd5a] transition-colors duration-300 inline-flex items-center gap-3 text-lg shadow-xl shadow-[#25D366]/20">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+                    Contactar por WhatsApp
+                </button>
+</div>
+<!-- Decorative blur circles -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-container rounded-full blur-3xl opacity-40 -z-0 pointer-events-none translate-y-[-50%]"></div>
+<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-tertiary-container rounded-full blur-3xl opacity-30 -z-0 pointer-events-none translate-y-[50%]"></div>
+</section>
+<!-- Location and Hours Section -->
+<section class="py-24 relative overflow-hidden" id="contacto">
+<div class="absolute inset-0 bg-[url('{{DATA:IMAGE:IMAGE_2}}')] bg-cover bg-center opacity-[0.15] mix-blend-multiply pointer-events-none"></div>
+<div class="px-4 md:px-12 max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-16 max-w-2xl mx-auto">
+<span class="font-label text-tertiary tracking-[0.1em] uppercase text-sm mb-4 block">Encuéntranos</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-background mb-6 tracking-tight">Ubicación y <span class="italic text-primary">Horarios</span></h2>
+<p class="font-body text-on-surface-variant">Visítanos en nuestro santuario de bienestar en el corazón de Arequipa.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<!-- Map -->
+<div class="rounded-2xl overflow-hidden shadow-2xl shadow-stone-200/50 aspect-video lg:aspect-auto lg:h-[450px] relative">
+<iframe allowfullscreen="" class="absolute inset-0" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.485601550993!2d-71.5435946!3d-16.3980313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a514d4e414d%3A0xc6c764e43cf71a!2sAntiquilla%20305%2C%20Yanahuara%2C%20Arequipa%2004013!5e0!3m2!1sen!2spe!4v1698765432100!5m2!1sen!2spe" style="border:0;" width="100%"></iframe>
+</div>
+<!-- Contact Info -->
+<div class="bg-surface/80 backdrop-blur-md rounded-2xl p-8 lg:p-12 ambient-shadow ghost-border h-full flex flex-col justify-center">
+<div class="space-y-10">
+<div>
+<h3 class="font-headline text-2xl text-on-background mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                Dirección
+                            </h3>
+<p class="font-body text-on-surface-variant text-lg">Antiquilla 305, Yanahuara<br/>Arequipa, Perú</p>
+</div>
+<div>
+<h3 class="font-headline text-2xl text-on-background mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                                Horario de Atención
+                            </h3>
+<ul class="font-body text-on-surface-variant text-lg space-y-3">
+<li class="flex justify-between items-center border-b border-outline-variant/20 pb-3">
+<span>Lunes - Sábado</span>
+<span class="font-medium text-on-background">8:00 - 21:00</span>
+</li>
+<li class="flex justify-between items-center pt-1">
+<span>Domingo</span>
+<span class="font-medium text-on-background text-sm">Horario reducido (Consultar)</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline text-2xl text-on-background mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+                                Contacto
+                            </h3>
+<div class="space-y-3">
+<p class="font-body text-on-surface-variant text-lg flex items-center gap-2">
+<span>+51 987 654 321</span>
+</p>
+<p class="font-body text-on-surface-variant text-lg flex items-center gap-2">
+<span>reservas@fairisspa.com</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group" href="#">
+<span class="material-symbols-outlined text-3xl group-hover:animate-pulse" data-icon="forum">forum</span>
+</a>
+<!-- Shared Component: Footer -->
+<footer class="bg-stone-100/90 backdrop-blur-md dark:bg-stone-900/90 w-full py-12 border-t border-stone-200/20 text-[#695d54] font-sans text-xs tracking-wide relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-12 max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col items-start gap-4">
+<span class="text-xl font-serif text-[#7b5556]">FAIRIS SPA</span>
+<p class="text-stone-500 max-w-xs">
+                    © 2024 FAIRIS SPA. Esencia y Bienestar en el corazón de Arequipa.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="flex flex-col gap-3">
+<a class="text-stone-500 hover:text-[#7b5556] transition-opacity hover:opacity-70" href="#">Aviso de Privacidad</a>
+<a class="text-stone-500 hover:text-[#7b5556] transition-opacity hover:opacity-70" href="#">Términos de Servicio</a>
+<a class="text-stone-500 hover:text-[#7b5556] transition-opacity hover:opacity-70" href="#">Preguntas Frecuentes</a>
+</div>
+<!-- Address/Contact Column (Added based on user request for Footer area integration) -->
+<div class="flex flex-col gap-3 text-stone-500">
+<p class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+                    Antiquilla 305, Yanahuara, Arequipa
+                </p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="schedule">schedule</span>
+                    Lun-Sáb: 8:00 - 21:00 (Dom. reducido)
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
