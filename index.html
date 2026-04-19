@@ -74,9 +74,8 @@
 </head>
 <body class="font-sans text-brand-dark antialiased overflow-x-hidden min-h-screen bg-[url('./images/bg-leaves-ai.png')] bg-fixed bg-center bg-cover bg-no-repeat relative">
 
-    <!-- Mirage Gradient Overlay for Text Readability & Reflection -->
-    <div class="fixed inset-0 z-[-1] bg-gradient-to-br from-white/90 via-white/50 to-brand-nude/20 backdrop-blur-[8px] backdrop-saturate-150 pointer-events-none"></div>
-    <div class="fixed inset-0 z-[-1] bg-brand-dark/5 pointer-events-none mix-blend-multiply"></div>
+    <!-- Mirage Overlay for Text Readability (No blur, to keep it crisp) -->
+    <div class="fixed inset-0 z-[-1] bg-gradient-to-br from-white/90 via-white/40 to-brand-gold/10 pointer-events-none"></div>
 
     <!-- HEADER / NAVBAR -->
     <header class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
@@ -128,7 +127,7 @@
         
         <div class="max-w-4xl mx-auto text-center reveal relative z-10 bg-white/30 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/60 shadow-soft">
             <div class="flex justify-center mb-8">
-                <img src="./images/logo.jpg" alt="Logo Fairis" class="h-40 w-40 object-cover rounded-full mix-blend-multiply opacity-90 filter contrast-125">
+                <img src="./images/logo.jpg" alt="Logo Fairis" class="h-48 w-48 md:h-56 md:w-56 object-cover rounded-full shadow-lg border-2 border-white">
             </div>
             <p class="text-brand-dark tracking-[0.25em] uppercase text-sm mb-6 font-bold text-shadow-sm">Spa Boutique & Salón</p>
             <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-6 text-brand-dark drop-shadow-md">
